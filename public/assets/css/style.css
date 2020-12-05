@@ -1,6 +1,13 @@
 body {
     background-color: palevioletred;
 }
+h1 {
+    text-align: center;
+}
+li {
+    padding: 5px;
+    margin: 5px;
+}
 ul {
 font-style: italic;
 font-size: medium;

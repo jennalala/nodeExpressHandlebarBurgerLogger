@@ -16,10 +16,7 @@ var burger = {
   update: function(objColVals, condition, cb) {
     orm.update("burger", objColVals, condition, cb);
   },
-  delete: function(condition, cb) {
-    orm.delete("burger", condition, cb);
-  }
 };
 
-// Export the database functions for the controller (catsController.js).
+// Export the database functions for the controller
 module.exports = burger;
