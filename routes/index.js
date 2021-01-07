@@ -12,20 +12,20 @@ router.get("/", function (req, res) {
     res.render("index", { burgers: result });
   });
 
-  // Burger.all(function (result) {
-  //   res.render("index", { burgers: result });
-  // });
+  Burger.all(function (result) {
+    res.render("index", { burgers: result });
+  });
 
-  // orm.all("burger", function (result) {
-  //   res.render("index", { burgers: result });
-  // });
+  orm.all("burger", function (result) {
+    res.render("index", { burgers: result });
+  });
 
-  // const qry = "select * from burger";
-  // connection.query(qry, function (err, result) {
-  //   if (err) throw err;
+  const qry = "select * from burger";
+  connection.query(qry, function (err, result) {
+    if (err) throw err;
 
-  //   res.render("index", { burgers: result });
-  // });
+    res.render("index", { burgers: result });
+  });
 });
 
 router.post("/api/burger", function (req, res) {
