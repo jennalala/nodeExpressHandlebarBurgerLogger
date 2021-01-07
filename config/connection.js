@@ -2,7 +2,7 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  host: "localhost",
+  host: "@ref:jawsdb-rigid-88286 completed provisioning, setting JAWSDB_URL",
   port: 3306,
   user: "root",
   password: "Lilly922!",
