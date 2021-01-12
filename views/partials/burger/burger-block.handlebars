@@ -1,0 +1,7 @@
+<div>
+    {{name}}
+    <form action="/api/burger/{{id}}" method="get">
+        <input type="hidden" name="devoured" value="{{newVal}}">
+        <button type="submit">&times;</button>
+    </form>
+</div>

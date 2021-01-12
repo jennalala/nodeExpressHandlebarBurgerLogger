@@ -7,7 +7,7 @@ $(function () {
         devoured: newDevoured,
       };
   
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/api/burger/" + id, {
         type: "PUT",
         data: newDevourState,
       }).then(function () {
@@ -24,7 +24,7 @@ $(function () {
         name: $("#burger").val().trim(),
       };
       // Send the POST request.
-      $.ajax("/api/burgers", {
+      $.ajax("/api/burger", {
         type: "POST",
         data: newBurger,
       }).then(function () {

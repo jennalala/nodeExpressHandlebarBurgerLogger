@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row" id="header">
     <div class="col-md-12 text-md-center">
-      <h1>Eat-Da-Buger</h1>
+      <h1>Eat-Da-Burger</h1>
     </div>
   </div>
   <div class="row" id="list">
@@ -9,21 +9,21 @@
       <h2 class="text-md-center">Burgers To Be Devoured</h2>
       <ul>
         {{#each burger}}
-        {{#unless isEaten}}
-        {{> burgers/burgers-block isEaten=true}}
+        {{#unless devoured}}
+        {{>burger/burger-block newVal="1"}}
         {{/unless}}
         {{/each}}
       </ul>
     </div>
     <div class="col-md-4">
-     <img src="./burger.jpg" alt="burger" width="300" height="175">
+      <img src="./burger.jpg" alt="burger" width="300" height="175">
     </div>
     <div class="col-md-4">
       <h2 class="text-md-center">Devoured!</h2>
       <ul>
         {{#each burger}}
-        {{#if isEaten}}
-        {{> burgers/burgers-block isEaten=false}}
+        {{#if devoured}}
+        {{>burger/burger-block newVal="0"}}
         {{/if}}
         {{/each}}
       </ul>
@@ -35,9 +35,7 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <h2 class="text-md-center">Add a Burger</h2>
-      <form class="create-form">
-
-
+      <form class="create-form" action="/api/burger" method="POST">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group text-md-end">
@@ -46,14 +44,15 @@
             </div>
             <div class="form-group text-md-end">
               <label for="isEaten">Devour?</label><br>
-              <input type="radio" name="isEaten" value="1" checked> Devour!<br>
-              <input type="radio" name="isEaten" value="0"> Wait!
+              <input type="radio" name="devoured" value="1" checked> Devour!<br>
+              <input type="radio" name="devoured" value="0"> Wait!
             </div>
           </div>
           <div class="col-md-6">
-            <button type="submit text-md-start" class="align-middle">Add Burger</button>
+            <button type="submit" class="align-middle text-md-start">Add Burger</button>
           </div>
         </div>
+      </form>
 
 
     </div>

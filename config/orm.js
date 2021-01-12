@@ -1,4 +1,4 @@
-const connection = require("../config/connection");
+const connection = require("./connection");
 // Helper function loops through and creates an array of question marks and turns it into a string
 function printQuestionMarks(num) {
   let arr = [];
@@ -28,12 +28,7 @@ function objToSql(ob) {
 const orm = {
   all: (tableInput, cb) => {
     const queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function (err, result) {
-      if (err) {
-        throw err;
-      }
-      cb(result);
-    });
+    connection.query(queryString, cb);
   },
   create: (table, cols, vals, cb) => {
     let queryString = "INSERT INTO " + table;
@@ -45,12 +40,7 @@ const orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    connection.query(queryString, vals, function (err, result) {
-      if (err) {
-        throw err;
-      }
-      cb(result);
-    });
+    connection.query(queryString, vals, cb);
   },
   update: (table, objColVals, condition, cb) => {
     let queryString = "UPDATE " + table;
