@@ -1,39 +1,69 @@
-<h1>Burger</h1>
-
-<h2>Devoured Burger</h2>
-
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  <li>
-    {{name}}
-  </li>
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Undevoured Burger</h2>
-
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  <li>
-    {{name}}
-  </li>
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form" action="/api/burger" method="POST">
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+<div class="container-fluid">
+  <div class="row" id="header">
+    <div class="col-md-12 text-md-center">
+      <h1>Eat-Da-Buger</h1>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="slee">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked>Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Ready To Eat!
+  <div class="row" id="list">
+    <div class="col-md-4">
+      <h2 class="text-md-center">Burgers To Be Devoured</h2>
+      <ul>
+        {{#each burger}}
+        {{#unless isEaten}}
+        {{> burgers/burgers-block isEaten=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-4">
+     <img src="./burger.jpg" alt="burger" width="300" height="175">
+    </div>
+    <div class="col-md-4">
+      <h2 class="text-md-center">Devoured!</h2>
+      <ul>
+        {{#each burger}}
+        {{#if isEaten}}
+        {{> burgers/burgers-block isEaten=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+
   </div>
-  <button type="submit">Add Burger</button>
-</form>
+  <div class="row" id="footer">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <h2 class="text-md-center">Add a Burger</h2>
+      <form class="create-form">
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group text-md-end">
+              <label for="burgers">Burger:</label>
+              <input type="text" id="burgers" name="name">
+            </div>
+            <div class="form-group text-md-end">
+              <label for="isEaten">Devour?</label><br>
+              <input type="radio" name="isEaten" value="1" checked> Devour!<br>
+              <input type="radio" name="isEaten" value="0"> Wait!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="submit text-md-start" class="align-middle">Add Burger</button>
+          </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-4"></div>
+
+
+    </form>
+  </div>
+</div>
+
+
+
+</div>
