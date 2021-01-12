@@ -34,19 +34,19 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
-  all: function (tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, cb);
-  },
   // all: function (tableInput, cb) {
   //   var queryString = "SELECT * FROM " + tableInput + ";";
-  //   connection.query(queryString, function (err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
+  //   connection.query(queryString, cb);
   // },
+  all: function (tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
   create: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
