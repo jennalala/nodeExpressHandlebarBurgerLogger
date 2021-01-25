@@ -13,3 +13,23 @@ font-style: italic;
 font-size: medium;
 color: indigo;
 }
+.create-form {
+    text-align: center;
+  }
+  
+  .jumbotron {
+    background-color: transparent;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
