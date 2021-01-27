@@ -18,6 +18,6 @@
 - npm install mysql
 - npm install express-handlebars
 
- ## Usage
+ ## Screenshot
 
 ![screenshot](./public/burgerlogger.png)
