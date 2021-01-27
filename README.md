@@ -20,4 +20,4 @@
 
  ## Usage
 
-![screenshot]()
+![screenshot](./public/burgerlogger.png)
